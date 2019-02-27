@@ -1,0 +1,45 @@
+public class hero {
+    private String  name,attack;
+   private int life;
+
+
+    public hero(String name1){
+        name=name1;
+        switch (name1){
+            case "Brand":
+                setLife(519);
+                setAttack("57");
+                break;
+            case "Camille":
+                setLife(575);
+                setAttack("68");
+                break;
+            case "Ashe":
+                setLife(539);
+                setAttack("61");
+                break;
+        }
+    }
+    public String getName(){
+        return this.name;
+    }
+
+    public void setLife(int newLife){
+    this.life=newLife;
+    }
+    public int  getLife(){
+        return this.life;
+    }
+    public void setAttack(String newAttack){
+        this.attack=newAttack;
+    }
+    public String getAttack(){
+        return this.attack;
+    }
+
+    public void showinfo(){
+        System.out.println("名字: "+getName());
+        System.out.println("血量: "+getLife());
+        System.out.println("攻擊力: "+getAttack());
+    }
+}
