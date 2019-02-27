@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        System.out.println("請輸入英雄數量: ");
+        int n=scn.nextInt();
+        hero heros[]=new hero[n];
+        for (int i=0;i<n;i++){
+            System.out.println("請輸入英雄名字: ");
+            heros[i]=new hero(scn.next());
+        }
+        boolean flag=true;
+        while (flag){
+            System.out.println("1. 搜尋英雄名 ");
+            System.out.println("2. 搜尋血量 ");
+            System.out.println("3. 離開 ");
+            int n1=scn.nextInt();
+            switch (n1){
+                case 1:
+                    System.out.println("請輸入名字: ");
+                    String heroname=scn.next();
+                    boolean flag1=false;
+                    for (int i=0;i<n;i++){
+                        if (heros[i].getName().equals(heroname)){
+                            heros[i].showinfo();
+                            flag=true;
+                        }
+                    }break;
+                case 2:
+                    System.out.println("請輸入血量: ");
+                    int n2=scn.nextInt();
+
+                    for (int i=0;i<n;i++){
+                        if (heros[i].getLife()>=(n2)){
+                            heros[i].showinfo();
+                    }
+                    }
+                    break;
+                case 3:
+                    flag=false;
+
+            }
+        }
+
+
+    }
+}
